@@ -1,0 +1,24 @@
+{
+  "name": "snipvault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "controller.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "highlightjs": "^9.16.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

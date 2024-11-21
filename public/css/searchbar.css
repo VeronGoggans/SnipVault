@@ -1,0 +1,72 @@
+.searchbar {
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    width: 50%;
+    max-width: 500px;
+    min-width: 300px;
+    border-radius: 40px;
+    display: flex;
+}
+
+
+.searchbar input {
+    outline: none;
+    border: none;
+    background-color: #f6f5ff;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 40px;
+    padding-left: 60px;
+    color: #5c7fdd;
+    transition: 200ms;
+}
+
+
+.searchbar input::placeholder {
+    color: #5c7eddb8;
+}
+
+.searchbar #search-icon {
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    font-size: 20px;
+    color: #dfe4ff;
+}
+
+
+
+
+.loading-container {
+    padding-top: 50px;
+    display: none;
+    gap: 20px; /* Space between dots */
+    justify-content: center; /* Center align */
+    align-items: center; /* Align vertically */
+    height: 100px; /* Adjust height as needed */
+}
+
+.dot {
+    width: 15px;  /* Dot size */
+    height: 15px;
+    background-color: #e7edff;  /* Dot color */
+    border-radius: 50%;  /* Make it round */
+    animation: bounce 1.2s infinite ease-in-out;
+}
+
+/* Individual delays for each dot */
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.dot:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+

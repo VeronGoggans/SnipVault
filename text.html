@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syntax Highlighting met Highlight.js</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Highlight.js CSS (thema) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+
+  
+  <!-- Highlight.js JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<style>
+
+  * {
+    font-family: Poppins;
+  }
+
+  .snippet-name-input {
+    font-size: 30px;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 100%;
+    margin: 20px 0;
+    color: #2f3773;
+  }
+
+  .snippet-name-input::placeholder {
+    color: #ccd2e5;
+  }
+
+  .snippet-tags-input {
+    background-color: #e7edff;
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 40px;
+    width: 300px;
+
+  }
+
+  .center {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .create-snippet-btn {
+  cursor: pointer;
+  border: 2px solid #161617;
+  width: 250px;
+  padding: 10px 0;
+  background-color: transparent;
+  border-radius: 10px;
+  color: #161617;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 5% auto;
+  transition: 200ms;
+}
+
+.create-snippet-btn:hover {
+  background-color: #161617;
+  color: #fff;
+}
+
+.create-snippet-btn:active {
+  scale: 1.05;
+}
+
+pre {
+  position: relative;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  max-width: 700px;
+}
+
+pre i {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  color: #ccd2e5;
+  cursor: pointer;
+}
+
+code::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+code::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #505564;
+}
+
+.add-tag-container {
+  position: relative;
+  margin-left: 10px;
+}
+
+.add-tag-container i {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  font-size: 16px;
+  color: #989fb1;
+}
+
+.add-tag-container input {
+  outline: none;
+  height: 100%;
+  border: none;
+  padding-left: 25px;
+  font-size: 16px;
+}
+
+.add-tag-container input::placeholder {
+  color: #b3bacfb8;
+}
+
+.tags {
+  padding: 20px 0;
+  display: flex;
+}
+
+.tag {
+    margin: 0 10px;
+    background-color: #f6f6ff;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+</style>
+<body>
+  <div class="center">
+    <input class="snippet-name-input" type="text" placeholder="Untitled">
+    <!-- <input class="snippet-tags-input" type="text" placeholder="Tags"> -->
+    
+    <!-- Je code die je wilt highlighten -->
+    <pre>
+      <i class="bi bi-copy"></i>
+      <code class="language" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; border-radius: 10px; background-color: #252a36; width: 700px; max-width: 700px; max-height: 465px; ">
+        @keyframes bounce {
+          0%, 80%, 100% {
+            transform: translateY(0);  /* No movement */
+          }
+          40% {
+            transform: translateY(-10px);  /* Move up */
+          }
+        }
+        
+        @keyframes mistyFade {
+          0% {
+            opacity: .5;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: .5;
+          }
+        }
+    </code></pre>
+    <div class="tags">
+      <div class="tag">Java</div>
+      <div class="tag">SQLite</div>
+      <div class="tag">Class</div>
+      <div class="add-tag-container">
+        <i class="bi bi-tag-fill"></i>
+        <input type="text" placeholder="Add tag">
+      </div>
+      
+    </div>
+    
+    <button class="create-snippet-btn">Save</button>
+  </div>
+  
+
+  <!-- Highlight.js initialiseren -->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Activeer syntax highlighting voor alle codeblokken
+      hljs.highlightAll();
+    });
+  </script>
+</body>
+</html>
