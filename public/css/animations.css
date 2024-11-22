@@ -18,3 +18,19 @@
     opacity: .5;
   }
 }
+
+
+.open-page-from-bottom {
+  opacity: 1 !important;
+  scale: 1 !important;
+  transform: translateX(0%) !important;
+}
+
+.expand {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+}

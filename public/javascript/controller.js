@@ -1,10 +1,11 @@
 import { Model } from "./model.js"
-import { View } from "./view.js";
+import { HomeView } from "./view.js";
+
 
 class Controller {
     constructor() {
         this.model = new Model();  
-        this.view = new View();
+        this.view = new HomeView();
     }    
 }
 

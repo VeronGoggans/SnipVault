@@ -20,22 +20,48 @@
 
   * {
     font-family: Poppins;
+    margin: 0;
   }
 
-  .snippet-name-input {
-    font-size: 30px;
-    padding-left: 20px;
+  body {
+    height: 100dvh;
+  }
+
+  .snippet-name-bar {
+    background-color: #2e323c;
+    min-height: 50px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: end;
+    padding-left: 30px;
+  }
+
+  .snippet-name-bar .snippet-name-box {
+    padding: 0 15px;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    background-color: #252a36;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+  }
+
+  .snippet-name-box span {
     outline: none;
-    border: none;
-    height: 50px;
-    width: 100%;
-    margin: 20px 0;
-    color: #2f3773;
   }
 
-  .snippet-name-input::placeholder {
-    color: #ccd2e5;
+  .snippet-name-box i {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
   }
+  
 
   .snippet-tags-input {
     background-color: #e7edff;
@@ -44,34 +70,42 @@
     height: 50px;
     border-radius: 40px;
     width: 300px;
-
   }
 
-  .center {
+  .snippet-page {
+    padding: 40px 0;
     width: 700px;
     margin: 0 auto;
+    min-height: calc(100dvh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .create-snippet-btn {
-  cursor: pointer;
-  border: 2px solid #161617;
-  width: 250px;
-  padding: 10px 0;
-  background-color: transparent;
-  border-radius: 10px;
-  color: #161617;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 5% auto;
-  transition: 200ms;
+
+  .create-snippet-btn,
+  .back-btn {
+    cursor: pointer;
+    border: 2px solid #161617;
+    width: 200px;
+    padding: 5px 0;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #161617;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 5% 10px;
+    transition: 200ms;
 }
 
-.create-snippet-btn:hover {
+.create-snippet-btn:hover,
+.back-btn:hover {
   background-color: #161617;
   color: #fff;
 }
 
-.create-snippet-btn:active {
+.create-snippet-btn:active,
+.back-btn:active {
   scale: 1.05;
 }
 
@@ -85,20 +119,26 @@ pre {
 
 pre i {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 20px;
   color: #ccd2e5;
   cursor: pointer;
+  transition: 100ms;
+}
+code {
+  outline: none;
+}
+
+pre i:hover {
+  scale: 1.2;
+}
+
+pre i:active {
+  scale: 1.4;
 }
 
 code::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-}
-
-code::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #505564;
+  display: none;
 }
 
 .add-tag-container {
@@ -108,7 +148,7 @@ code::-webkit-scrollbar-thumb {
 
 .add-tag-container i {
   position: absolute;
-  top: 6px;
+  top: 2px;
   left: 5px;
   font-size: 16px;
   color: #989fb1;
@@ -118,6 +158,7 @@ code::-webkit-scrollbar-thumb {
   outline: none;
   height: 100%;
   border: none;
+  width: 300px;
   padding-left: 25px;
   font-size: 16px;
 }
@@ -129,6 +170,13 @@ code::-webkit-scrollbar-thumb {
 .tags {
   padding: 20px 0;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
 }
 
 .tag {
@@ -139,47 +187,32 @@ code::-webkit-scrollbar-thumb {
 }
 </style>
 <body>
-  <div class="center">
-    <input class="snippet-name-input" type="text" placeholder="Untitled">
-    <!-- <input class="snippet-tags-input" type="text" placeholder="Tags"> -->
-    
-    <!-- Je code die je wilt highlighten -->
+  <div class="snippet-page">
+
+    <div class="snippet-name-bar">
+      <div class="snippet-name-box">
+        <i class="bi bi-code-slash"></i>
+        <span class="snippet-name" contenteditable="true">Hello world</span>
+      </div>
+    </div>
+
     <pre>
       <i class="bi bi-copy"></i>
-      <code class="language" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; border-radius: 10px; background-color: #252a36; width: 700px; max-width: 700px; max-height: 465px; ">
-        @keyframes bounce {
-          0%, 80%, 100% {
-            transform: translateY(0);  /* No movement */
-          }
-          40% {
-            transform: translateY(-10px);  /* Move up */
-          }
-        }
-        
-        @keyframes mistyFade {
-          0% {
-            opacity: .5;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            opacity: .5;
-          }
-        }
+      <code class="language" contenteditable="true" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; border-radius: 0 0 10px 10px; background-color: #252a36; width: 700px; max-width: 700px; max-height: 465px; ">
+       # Add your snippet here...
     </code></pre>
     <div class="tags">
-      <div class="tag">Java</div>
-      <div class="tag">SQLite</div>
-      <div class="tag">Class</div>
+
       <div class="add-tag-container">
         <i class="bi bi-tag-fill"></i>
-        <input type="text" placeholder="Add tag">
+        <input type="text" placeholder="Add some tags to descripbe me 🙂">
       </div>
       
     </div>
-    
-    <button class="create-snippet-btn">Save</button>
+    <div class="buttons-container">
+      <button class="back-btn">Back</button>
+      <button class="create-snippet-btn">Save</button>
+    </div>
   </div>
   
 
